@@ -1,0 +1,6 @@
+id: greet-alice
+input: "Say hello to Alice"
+expected: "Hello, Alice"
+scoring:
+  method: semantic_similarity
+  threshold: 0.85

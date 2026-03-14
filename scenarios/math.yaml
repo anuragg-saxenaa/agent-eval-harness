@@ -1,0 +1,5 @@
+id: basic-math
+input: "What is 2+2? Reply with just the number."
+expected: "4"
+scoring:
+  method: exact_match
