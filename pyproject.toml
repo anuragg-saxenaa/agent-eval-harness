@@ -1,0 +1,25 @@
+[project]
+name = "agent-eval-harness"
+version = "0.1.0"
+description = "Automated evaluation framework for LLM agents"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.0.0",
+    "anthropic>=0.20.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff"]
+
+[project.scripts]
+agent-eval = "cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 100

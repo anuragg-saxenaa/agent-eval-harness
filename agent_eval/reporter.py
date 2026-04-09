@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 def generate_report(results: list[dict], output_path: str = None) -> dict:
@@ -8,7 +8,7 @@ def generate_report(results: list[dict], output_path: str = None) -> dict:
     passed = sum(1 for r in results if r.get("passed"))
     report = {
         "summary": {"total": total, "passed": passed, "failed": total - passed, "pass_rate": round(passed / total, 4) if total else 0},
-        "generated_at": datetime.utcnow().isoformat(),
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "results": results,
     }
 
