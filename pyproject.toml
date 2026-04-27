@@ -23,7 +23,10 @@ python_files = ["test_*.py"]
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["agent_eval*", "scenarios*", "cli*"]
+packages = ["agent_eval", "scenarios"]
+
+[tool.setuptools]
+py-modules = ["cli"]
 
 [tool.ruff]
 line-length = 100
