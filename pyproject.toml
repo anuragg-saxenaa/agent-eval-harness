@@ -21,5 +21,9 @@ agent-eval = "cli:main"
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agent_eval*", "scenarios*", "cli*"]
+
 [tool.ruff]
 line-length = 100
